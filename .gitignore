@@ -1,0 +1,13 @@
+# Ignore local node packages
+frontend/node_modules/
+frontend/dist/
+
+# Ignore Java compile targets
+backend/target/
+backend/.mvn/
+
+# Ignore environment config files and system files
+.env
+.DS_Store
+*.log
+.vscode/
