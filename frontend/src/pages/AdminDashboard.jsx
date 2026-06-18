@@ -9,7 +9,7 @@ const AdminDashboard = ({ user, triggerToast }) => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8080/api/users');
+      const response = await fetch('https://packing-list-backend.onrender.com/api/users');
       if (response.ok) {
         const data = await response.json();
         setUsers(data);
@@ -40,7 +40,7 @@ const AdminDashboard = ({ user, triggerToast }) => {
     if (!confirmed) return;
 
     try {
-      const response = await fetch(`http://localhost:8080/api/users/${targetUser.id}`, {
+      const response = await fetch(`https://packing-list-backend.onrender.com/api/users/${targetUser.id}`, {
         method: 'DELETE'
       });
 
