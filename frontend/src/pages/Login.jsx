@@ -59,7 +59,7 @@ const Login = ({ onLogin, triggerToast }) => {
               <Briefcase size={32} style={{ color: 'var(--primary)' }} />
             </div>
           </div>
-          <h2 className="auth-title">Packing List Application</h2>
+          <h2 className="auth-title">Packing List WebApp</h2>
           <p className="auth-subtitle">Sign in to organize your journey</p>
         </div>
 
