@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Briefcase, Lock, Mail, User as UserIcon } from 'lucide-react';
+import { API_BASE } from '../config';
 
 const Register = ({ triggerToast }) => {
   const [username, setUsername] = useState('');
@@ -18,7 +19,7 @@ const Register = ({ triggerToast }) => {
 
     setLoading(true);
     try {
-      const response = await fetch('https://packing-list-backend.onrender.com/api/auth/register', {
+      const response = await fetch(`${API_BASE}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password, role: 'CLIENT' })

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, Search, CheckSquare, Square, RefreshCw, Luggage } from 'lucide-react';
+import { API_BASE } from '../config';
 
 const ClientDashboard = ({ user, triggerToast }) => {
   const [items, setItems] = useState([]);
@@ -19,7 +20,7 @@ const ClientDashboard = ({ user, triggerToast }) => {
   const fetchItems = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`https://packing-list-backend.onrender.com/api/items/user/${user.id}`);
+      const response = await fetch(`${API_BASE}/api/items/user/${user.id}`);
       if (response.ok) {
         const data = await response.json();
         setItems(data);
@@ -47,7 +48,7 @@ const ClientDashboard = ({ user, triggerToast }) => {
     }
 
     try {
-      const response = await fetch('https://packing-list-backend.onrender.com/api/items', {
+      const response = await fetch(`${API_BASE}/api/items`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -78,7 +79,7 @@ const ClientDashboard = ({ user, triggerToast }) => {
   const handleTogglePacked = async (item) => {
     try {
       const updatedItem = { ...item, packed: !item.packed };
-      const response = await fetch(`https://packing-list-backend.onrender.com/api/items/${item.id}`, {
+      const response = await fetch(`${API_BASE}/api/items/${item.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedItem)
@@ -120,7 +121,7 @@ const ClientDashboard = ({ user, triggerToast }) => {
 
     try {
       const updatedItem = { ...editingItem, name: itemName, quantity: itemQty };
-      const response = await fetch(`https://packing-list-backend.onrender.com/api/items/${editingItem.id}`, {
+      const response = await fetch(`${API_BASE}/api/items/${editingItem.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedItem)
@@ -149,7 +150,7 @@ const ClientDashboard = ({ user, triggerToast }) => {
     if (!window.confirm(`Are you sure you want to remove "${name}"?`)) return;
 
     try {
-      const response = await fetch(`https://packing-list-backend.onrender.com/api/items/${itemId}`, {
+      const response = await fetch(`${API_BASE}/api/items/${itemId}`, {
         method: 'DELETE'
       });
 

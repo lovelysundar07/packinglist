@@ -1,0 +1,6 @@
+// Dynamic API Base URL configuration
+// Automatically connects to localhost when developing, and to Render when live on Vercel
+export const API_BASE = 
+  window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8080'
+    : 'https://packing-list-backend.onrender.com'; // Replace with your actual live Render domain if different

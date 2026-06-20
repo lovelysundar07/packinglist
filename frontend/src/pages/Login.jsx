@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Briefcase, Lock, User as UserIcon } from 'lucide-react';
+import { API_BASE } from '../config';
 
 const Login = ({ onLogin, triggerToast }) => {
   const [username, setUsername] = useState('');
@@ -17,7 +18,7 @@ const Login = ({ onLogin, triggerToast }) => {
 
     setLoading(true);
     try {
-      const response = await fetch('https://packing-list-backend.onrender.com/api/auth/login', {
+      const response = await fetch(`${API_BASE}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
