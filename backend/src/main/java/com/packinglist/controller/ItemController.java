@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(originPatterns = {"http://localhost:5173", "http://127.0.0.1:5173", "https://*.vercel.app"}, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/items")
 public class ItemController {
