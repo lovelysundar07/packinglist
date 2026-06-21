@@ -116,7 +116,7 @@ const Login = ({ onLogin, triggerToast }) => {
         <div className="auth-footer">
           Don't have an account?{' '}
           <Link to="/register" className="auth-link">
-            Create Account
+            Register
           </Link>
         </div>
       </div>
