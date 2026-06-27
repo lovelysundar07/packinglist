@@ -27,7 +27,7 @@ const Login = ({ onLogin, triggerToast }) => {
       const data = await response.json();
 
       if (response.ok) {
-        onLogin(data); // Save user to App state and localStorage
+        onLogin(data); 
         if (data.role === 'ADMIN') {
           navigate('/admin');
         } else {

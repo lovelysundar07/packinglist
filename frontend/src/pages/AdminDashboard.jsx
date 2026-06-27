@@ -58,12 +58,12 @@ const AdminDashboard = ({ user, triggerToast }) => {
     }
   };
 
-  // Stats
+ 
   const totalUsers = users.length;
   const adminCount = users.filter((u) => u.role === 'ADMIN').length;
   const clientCount = users.filter((u) => u.role === 'CLIENT').length;
 
-  // Filter users
+  
   const filteredUsers = users.filter(
     (u) =>
       u.username.toLowerCase().includes(search.toLowerCase()) ||

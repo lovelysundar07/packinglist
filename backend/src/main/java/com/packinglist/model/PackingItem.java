@@ -16,5 +16,5 @@ public class PackingItem {
     private String name;
     private int quantity;
     private boolean packed;
-    private String userId; // Links the item to a specific User
+    private String userId; 
 }

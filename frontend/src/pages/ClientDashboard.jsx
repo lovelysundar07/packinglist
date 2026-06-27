@@ -7,16 +7,16 @@ const ClientDashboard = ({ user, triggerToast }) => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   
-  // Modals state
+  
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
   
-  // Form states
+  
   const [itemName, setItemName] = useState('');
   const [itemQty, setItemQty] = useState(1);
   const [editingItem, setEditingItem] = useState(null);
 
-  // Fetch items on mount
+  
   const fetchItems = async () => {
     setLoading(true);
     try {
@@ -39,7 +39,7 @@ const ClientDashboard = ({ user, triggerToast }) => {
     fetchItems();
   }, [user.id]);
 
-  // Handle Add Item
+  
   const handleAddItem = async (e) => {
     e.preventDefault();
     if (!itemName.trim() || itemQty < 1) {
@@ -103,7 +103,7 @@ const ClientDashboard = ({ user, triggerToast }) => {
     }
   };
 
-  // Open Edit Modal
+ 
   const openEditModal = (item) => {
     setEditingItem(item);
     setItemName(item.name);
