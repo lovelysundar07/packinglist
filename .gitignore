@@ -1,13 +1,39 @@
-# Ignore local node packages
+# =============================================
+# Node.js / Frontend - NEVER upload to GitHub
+# =============================================
+node_modules/
 frontend/node_modules/
 frontend/dist/
+frontend/.vite/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Ignore Java compile targets
+# =============================================
+# Java / Spring Boot - NEVER upload to GitHub
+# =============================================
 backend/target/
 backend/.mvn/
+target/
+*.class
+*.jar
+*.war
 
-# Ignore environment config files and system files
+# =============================================
+# Environment & Secrets
+# =============================================
 .env
-.DS_Store
-*.log
+.env.local
+.env.production
+
+# =============================================
+# IDE and OS files
+# =============================================
 .vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.log
